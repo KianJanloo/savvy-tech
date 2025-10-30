@@ -1,13 +1,12 @@
-import { StarIcon } from "@heroicons/react/24/outline";
 import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
 
 function Footer() {
   return (
-    <footer className="w-full border-t border-gray-300 pt-6 px-4">
+    <footer className="w-full border-t max-md:fixed bottom-0 left-0 max-md:pb-6 max-md:bg-gray-100 border-gray-300 pt-6 px-4">
       <div className="max-w-5xl mx-auto flex flex-row justify-between items-center gap-4">
         <span className="flex gap-2 items-center">
-          <StarIcon className="w-6 h-6 text-yellow-400 hover:scale-125 transition-transform duration-200" />
-          <p className="font-bold text-lg text-gray-800 hover:text-yellow-500 transition-colors">
+          @
+          <p className="font-bold text-lg text-gray-800 transition-colors">
             Savvy Tech
           </p>
         </span>

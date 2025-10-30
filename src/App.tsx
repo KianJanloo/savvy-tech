@@ -16,6 +16,24 @@ export default function App() {
       dateCreated: new Date(),
       id: "1",
     },
+    {
+      title: "Product 2",
+      subtitle: "The subtitle of this product 2.",
+      dateCreated: new Date(),
+      id: "2",
+    },
+    {
+      title: "Product 3",
+      subtitle: "The subtitle of this product 3.",
+      dateCreated: new Date(),
+      id: "3",
+    },
+    {
+      title: "Product 4",
+      subtitle: "The subtitle of this product 4.",
+      dateCreated: new Date(),
+      id: "4",
+    },
   ]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState<ListItemType | undefined>();
@@ -59,7 +77,7 @@ export default function App() {
     <div className="min-h-screen bg-gray-100 py-8">
       <div className="flex flex-col h-[620px] justify-between max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="">
-          <div className="flex flex-wrap gap-4 border-b pb-6 border-gray-300 justify-between items-center mb-6">
+          <div className="flex flex-wrap gap-4 border-b pb-6 max-md:fixed top-0 left-0 max-md:w-full max-md:p-4 max-md:bg-gray-100 border-gray-300 justify-between items-center mb-6">
             <h1 className="text-2xl font-semibold text-gray-900">
               List Management
             </h1>
@@ -79,7 +97,7 @@ export default function App() {
               </p>
             </div>
           ) : (
-            <div className="space-y-4">
+            <div className="space-y-4 max-h-[500px] max-md:mt-12 overflow-y-scroll overflow-x-hidden">
               {items.map((item) => (
                 <ListItem
                   key={item.id}
