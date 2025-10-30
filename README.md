@@ -33,6 +33,9 @@ Designed with a focus on clarity, accessibility, and thoughtful UX.
 
 ## Project Structure
 
+
+
+```bash
 savvy-tech/
 ├── src/
 │   ├── assets/
@@ -59,6 +62,7 @@ savvy-tech/
 │   └── vite.svg
 ├── package.json
 └── README.md
+```
 
 ---
 
