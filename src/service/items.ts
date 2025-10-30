@@ -23,4 +23,10 @@ export const listItems = [
     dateCreated: new Date(),
     id: "4",
   },
+  {
+    title: "Product 5",
+    subtitle: "The subtitle of this product 5.",
+    dateCreated: new Date(),
+    id: "5",
+  },
 ];
