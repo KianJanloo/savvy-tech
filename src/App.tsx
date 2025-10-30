@@ -1,8 +1,11 @@
-import { useState } from 'react';
-import type { ListItem as ListItemType, ListItemFormData } from './types/ListItem';
-import ListItem from './components/ListItem';
-import Modal from './components/Modal';
-import { PlusIcon } from '@heroicons/react/24/outline';
+import { useState } from "react";
+import type {
+  ListItem as ListItemType,
+  ListItemFormData,
+} from "./types/ListItem";
+import ListItem from "./components/ListItem";
+import Modal from "./components/Modal";
+import { PlusIcon } from "@heroicons/react/24/outline";
 
 export default function App() {
   const [items, setItems] = useState<ListItemType[]>([]);
@@ -48,7 +51,9 @@ export default function App() {
     <div className="min-h-screen bg-gray-100 py-8">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-wrap gap-4 justify-between items-center mb-6">
-          <h1 className="text-2xl font-semibold text-gray-900">List Management</h1>
+          <h1 className="text-2xl font-semibold text-gray-900">
+            List Management
+          </h1>
           <button
             onClick={openCreateModal}
             className="inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
@@ -60,7 +65,9 @@ export default function App() {
 
         {items.length === 0 ? (
           <div className="text-center py-12">
-            <p className="text-gray-500">No items yet. Click the Create Item button to add one.</p>
+            <p className="text-gray-500">
+              No items yet. Click the Create Item button to add one.
+            </p>
           </div>
         ) : (
           <div className="space-y-4">
