@@ -22,7 +22,7 @@ function DeleteModal({ isOpen, onClose, onSubmit, title }: ModalProps) {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+          <div className="fixed inset-0 bg-gray-500 dark:bg-gray-700 dark:bg-opacity-75 bg-opacity-75 transition-opacity" />
         </Transition.Child>
 
         <div className="fixed inset-0 max-md:top-40 z-10 w-screen overflow-y-auto">
@@ -36,11 +36,11 @@ function DeleteModal({ isOpen, onClose, onSubmit, title }: ModalProps) {
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
+              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white dark:bg-gray-900 px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
                 <div className="absolute right-0 top-0 hidden pr-4 pt-4 sm:block">
                   <button
                     type="button"
-                    className="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    className="rounded-md bg-white dark:bg-gray-900 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                     onClick={onClose}
                   >
                     <span className="sr-only">Close</span>
@@ -51,7 +51,7 @@ function DeleteModal({ isOpen, onClose, onSubmit, title }: ModalProps) {
                   <div className="mt-3 text-center sm:mt-0 sm:text-left w-full">
                     <Dialog.Title
                       as="h3"
-                      className="text-lg font-semibold leading-6 mb-2 text-gray-900"
+                      className="text-lg font-semibold leading-6 mb-2 text-gray-900 dark:text-white"
                     >
                       Delete item
                     </Dialog.Title>
@@ -72,7 +72,7 @@ function DeleteModal({ isOpen, onClose, onSubmit, title }: ModalProps) {
                       </button>
                       <button
                         type="button"
-                        className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+                        className="mt-3 inline-flex w-full justify-center rounded-md bg-white dark:bg-gray-900 px-3 py-2 text-sm font-semibold text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-700 hover:bg-gray-50 sm:mt-0 sm:w-auto"
                         onClick={onClose}
                       >
                         Cancel
