@@ -22,7 +22,7 @@ function ToggleTheme() {
   return (
     <button
       onClick={() => setDarkMode(!darkMode)}
-      className="fixed bottom-4 right-4 p-4 rounded-full text-white bg-blue-500 hover:bg-blue-400 transition"
+      className="md:fixed bottom-4 right-4 md:p-4 max-md:px-3 max-md:py-2.5 rounded-full max-md:rounded-md text-white bg-blue-500 hover:bg-blue-400 transition"
     >
       {darkMode ? <FaSun /> : <FaMoon />}
     </button>
