@@ -4,7 +4,7 @@ import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
 function Footer() {
   return (
     <footer className="w-full border-t border-gray-300 py-6 px-4">
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+      <div className="max-w-5xl mx-auto flex flex-row justify-between items-center gap-4">
         <span className="flex gap-2 items-center">
           <StarIcon className="w-6 h-6 text-yellow-400 hover:scale-125 transition-transform duration-200" />
           <p className="font-bold text-lg text-gray-800 hover:text-yellow-500 transition-colors">
@@ -12,7 +12,7 @@ function Footer() {
           </p>
         </span>
 
-        <p className="text-xs text-gray-400 text-center">
+        <p className="text-xs text-gray-400 text-center max-md:hidden">
           &copy; {new Date().getFullYear()} Savvy Tech.
         </p>
 

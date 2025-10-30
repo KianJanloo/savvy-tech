@@ -25,7 +25,7 @@ function DeleteModal({ isOpen, onClose, onSubmit, title }: ModalProps) {
           <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
         </Transition.Child>
 
-        <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+        <div className="fixed inset-0 max-md:top-40 z-10 w-screen overflow-y-auto">
           <div className="sm:flex min-h-full items-center justify-center p-4 text-center sm:p-0">
             <Transition.Child
               as={Fragment}
@@ -51,7 +51,7 @@ function DeleteModal({ isOpen, onClose, onSubmit, title }: ModalProps) {
                   <div className="mt-3 text-center sm:mt-0 sm:text-left w-full">
                     <Dialog.Title
                       as="h3"
-                      className="text-lg font-semibold leading-6 text-gray-900"
+                      className="text-lg font-semibold leading-6 mb-2 text-gray-900"
                     >
                       Delete item
                     </Dialog.Title>
