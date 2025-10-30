@@ -1,35 +1,87 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import type { ListItem as ListItemType, ListItemFormData } from './types/ListItem';
+import ListItem from './components/ListItem';
+import Modal from './components/Modal';
+import { PlusIcon } from '@heroicons/react/24/outline';
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [items, setItems] = useState<ListItemType[]>([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState<ListItemType | undefined>();
+
+  const handleCreateItem = (data: ListItemFormData) => {
+    const newItem: ListItemType = {
+      id: crypto.randomUUID(),
+      ...data,
+      dateCreated: new Date(),
+    };
+    setItems((prev) => [...prev, newItem]);
+  };
+
+  const handleEditItem = (data: ListItemFormData) => {
+    if (!selectedItem) return;
+    setItems((prev) =>
+      prev.map((item) =>
+        item.id === selectedItem.id
+          ? { ...item, title: data.title, subtitle: data.subtitle }
+          : item
+      )
+    );
+    setSelectedItem(undefined);
+  };
+
+  const handleDeleteItem = (id: string) => {
+    setItems((prev) => prev.filter((item) => item.id !== id));
+  };
+
+  const openCreateModal = () => {
+    setSelectedItem(undefined);
+    setIsModalOpen(true);
+  };
+
+  const openEditModal = (item: ListItemType) => {
+    setSelectedItem(item);
+    setIsModalOpen(true);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="min-h-screen bg-gray-100 py-8">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center mb-6">
+          <h1 className="text-2xl font-semibold text-gray-900">List Management</h1>
+          <button
+            onClick={openCreateModal}
+            className="inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          >
+            <PlusIcon className="-ml-0.5 mr-1.5 h-5 w-5" aria-hidden="true" />
+            Create Item
+          </button>
+        </div>
 
-export default App
+        {items.length === 0 ? (
+          <div className="text-center py-12">
+            <p className="text-gray-500">No items yet. Click the Create Item button to add one.</p>
+          </div>
+        ) : (
+          <div className="space-y-4">
+            {items.map((item) => (
+              <ListItem
+                key={item.id}
+                item={item}
+                onEdit={openEditModal}
+                onDelete={handleDeleteItem}
+              />
+            ))}
+          </div>
+        )}
+
+        <Modal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          onSubmit={selectedItem ? handleEditItem : handleCreateItem}
+          item={selectedItem}
+        />
+      </div>
+    </div>
+  );
+}
