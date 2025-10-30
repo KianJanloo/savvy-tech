@@ -12,6 +12,7 @@ import ToggleTheme from "./components/common/ToggleTheme";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { ToastContainer } from "react-toastify";
 import { customToast } from "./utils/toast.config";
+import LoadingScreen from "./components/loaders/LoadingScreen";
 
 export default function App() {
   const [items, setItems] = useState<ListItemType[]>(listItems);
@@ -76,6 +77,12 @@ export default function App() {
     setSelectedItem(item);
     setIsModalOpen(true);
   };
+
+  const [loading, setLoading] = useState(true);
+
+  if (loading) {
+    return <LoadingScreen onFinish={() => setLoading(false)} />;
+  }
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-800 py-8">
