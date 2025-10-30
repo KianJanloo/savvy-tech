@@ -47,7 +47,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gray-100 py-8">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center mb-6">
+        <div className="flex flex-wrap gap-4 justify-between items-center mb-6">
           <h1 className="text-2xl font-semibold text-gray-900">List Management</h1>
           <button
             onClick={openCreateModal}

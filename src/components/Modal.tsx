@@ -77,7 +77,7 @@ export default function Modal({ isOpen, onClose, onSubmit, item }: ModalProps) {
         </Transition.Child>
 
         <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-          <div className="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+          <div className="sm:flex min-h-full items-center justify-center p-4 text-center sm:p-0">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -122,7 +122,7 @@ export default function Modal({ isOpen, onClose, onSubmit, item }: ModalProps) {
                           onChange={(e) =>
                             setFormData({ ...formData, title: e.target.value })
                           }
-                          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                          className="mt-1 px-4 py-2 block w-full rounded-md border-gray-300 border shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                         />
                         {errors.title && (
                           <p className="mt-1 text-sm text-red-600">
@@ -148,7 +148,7 @@ export default function Modal({ isOpen, onClose, onSubmit, item }: ModalProps) {
                               subtitle: e.target.value,
                             })
                           }
-                          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                          className="mt-1 px-4 py-2 block w-full rounded-md border-gray-300 border shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                         />
                         {errors.subtitle && (
                           <p className="mt-1 text-sm text-red-600">
