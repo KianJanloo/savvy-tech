@@ -38,13 +38,21 @@ savvy-tech/
 │   ├── assets/
 |   |   └── react.svg
 │   ├── components/
-│   │   ├── DeleteModal.jsx
-│   │   └── Footer.jsx
-│   │   ├── ListItem.jsx
-│   │   ├── Modal.jsx
+|   |   ├── common/
+│   │   |    ├── Footer.tsx
+|   |   |    └── ToggleTheme.tsx
+|   |   ├── dialogs/
+│   │   |    ├── DeleteModal.tsx
+|   |   |    └── Modal.tsx
+│   │   └── ListItem.tsx
+|   ├── service/
+|   |   └── items.ts
 |   ├── types/
 |   |   └── ListItem.ts
-│   ├── App.jsx
+|   ├── utils/
+|   |   ├── getCurrentYear.ts
+|   |   └── toast.config.ts
+│   ├── App.tsx
 │   └── index.css
 │   └── main.tsx
 ├── public/
