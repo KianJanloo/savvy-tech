@@ -126,7 +126,7 @@ export default function App() {
                     className={`px-2 rounded-md text-sm font-medium transition-all duration-200 ${
                       page === 1
                         ? "text-gray-400 cursor-not-allowed"
-                        : "text-black dark:text-white active:scale-95"
+                        : "text-gray-600 dark:text-white active:scale-95"
                     }`}
                   >
                     <FaArrowLeft />
@@ -158,7 +158,7 @@ export default function App() {
                     className={`px-2 rounded-md text-sm font-medium transition-all duration-200 ${
                       page === totalPages
                         ? "text-gray-400 cursor-not-allowed"
-                        : "text-black dark:text-white active:scale-95"
+                        : "text-gray-600 dark:text-white active:scale-95"
                     }`}
                   >
                     <FaArrowRight />

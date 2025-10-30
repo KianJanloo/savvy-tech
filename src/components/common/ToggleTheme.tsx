@@ -3,10 +3,7 @@ import { FaMoon, FaSun } from "react-icons/fa";
 
 function ToggleTheme() {
   const [darkMode, setDarkMode] = useState<boolean>(() => {
-    if (typeof window !== "undefined") {
-      return localStorage.getItem("theme") === "light";
-    }
-    return false;
+    return localStorage.getItem("theme") === "dark";
   });
 
   useEffect(() => {
