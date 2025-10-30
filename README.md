@@ -36,24 +36,24 @@ Designed with a focus on clarity, accessibility, and thoughtful UX.
 savvy-tech/
 ├── src/
 │   ├── assets/
-|   |   └── react.svg
+│   │   └── react.svg
 │   ├── components/
-|   |   ├── common/
-│   │   |    ├── Footer.tsx
-|   |   |    └── ToggleTheme.tsx
-|   |   ├── dialogs/
-│   │   |    ├── DeleteModal.tsx
-|   |   |    └── Modal.tsx
+│   │   ├── common/
+│   │   │   ├── Footer.tsx
+│   │   │   └── ToggleTheme.tsx
+│   │   ├── dialogs/
+│   │   │   ├── DeleteModal.tsx
+│   │   │   └── Modal.tsx
 │   │   └── ListItem.tsx
-|   ├── service/
-|   |   └── items.ts
-|   ├── types/
-|   |   └── ListItem.ts
-|   ├── utils/
-|   |   ├── getCurrentYear.ts
-|   |   └── toast.config.ts
+│   ├── service/
+│   │   └── items.ts
+│   ├── types/
+│   │   └── ListItem.ts
+│   ├── utils/
+│   │   ├── getCurrentYear.ts
+│   │   └── toast.config.ts
 │   ├── App.tsx
-│   └── index.css
+│   ├── index.css
 │   └── main.tsx
 ├── public/
 │   └── vite.svg
