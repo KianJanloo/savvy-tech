@@ -1,4 +1,5 @@
 import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
+import { getCurrentYear } from "../../utils/getCurrentYear";
 
 function Footer() {
   return (
@@ -12,7 +13,7 @@ function Footer() {
         </span>
 
         <p className="text-xs text-gray-400 text-center max-md:hidden">
-          &copy; {new Date().getFullYear()} Savvy Tech.
+          &copy; {getCurrentYear()} Savvy Tech.
         </p>
 
         <div className="flex gap-4">

@@ -10,6 +10,8 @@ import Footer from "./components/common/Footer";
 import { listItems } from "./service/items";
 import ToggleTheme from "./components/common/ToggleTheme";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { ToastContainer } from "react-toastify";
+import { customToast } from "./utils/toast.config";
 
 export default function App() {
   const [items, setItems] = useState<ListItemType[]>(listItems);
@@ -35,6 +37,9 @@ export default function App() {
       dateCreated: new Date(),
     };
     setItems((prev) => [...prev, newItem]);
+    customToast("The item successfully created!", {
+      type: "success",
+    });
   };
 
   const handleEditItem = (data: ListItemFormData) => {
@@ -47,6 +52,9 @@ export default function App() {
       )
     );
     setSelectedItem(undefined);
+    customToast("The item successfully edited!", {
+      type: "success",
+    });
   };
 
   const handleDeleteItem = (id: string) => {
@@ -54,6 +62,9 @@ export default function App() {
     if (paginatedItems.length === 1 && page > 1) {
       setPage((prev) => prev - 1);
     }
+    customToast("The item successfully deleted!", {
+      type: "success",
+    });
   };
 
   const openCreateModal = () => {
@@ -112,10 +123,10 @@ export default function App() {
                   <button
                     onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
                     disabled={page === 1}
-                    className={`px-4 py-2.5 rounded-md text-sm font-medium transition-all duration-200 ${
+                    className={`px-2 rounded-md text-sm font-medium transition-all duration-200 ${
                       page === 1
-                        ? "bg-gray-200 dark:bg-gray-700 text-gray-400 cursor-not-allowed"
-                        : "bg-indigo-600 text-white hover:bg-indigo-500 active:scale-95"
+                        ? "text-gray-400 cursor-not-allowed"
+                        : "text-black dark:text-white active:scale-95"
                     }`}
                   >
                     <FaArrowLeft />
@@ -130,7 +141,7 @@ export default function App() {
                           className={`w-8 h-8 sm:w-9 sm:h-9 rounded-md text-sm font-medium flex items-center justify-center transition-all duration-200 ${
                             num === page
                               ? "bg-indigo-600 text-white shadow-md scale-105"
-                              : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-indigo-100 dark:hover:bg-indigo-600 hover:text-indigo-700 dark:hover:text-white"
+                              : "bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 hover:bg-indigo-100 dark:hover:bg-indigo-600 hover:text-indigo-700 dark:hover:text-white"
                           }`}
                         >
                           {num}
@@ -144,10 +155,10 @@ export default function App() {
                       setPage((prev) => Math.min(prev + 1, totalPages))
                     }
                     disabled={page === totalPages}
-                    className={`px-4 py-2.5 rounded-md text-sm font-medium transition-all duration-200 ${
+                    className={`px-2 rounded-md text-sm font-medium transition-all duration-200 ${
                       page === totalPages
-                        ? "bg-gray-200 dark:bg-gray-700 text-gray-400 cursor-not-allowed"
-                        : "bg-indigo-600 text-white hover:bg-indigo-500 active:scale-95"
+                        ? "text-gray-400 cursor-not-allowed"
+                        : "text-black dark:text-white active:scale-95"
                     }`}
                   >
                     <FaArrowRight />
@@ -171,6 +182,7 @@ export default function App() {
           item={selectedItem}
         />
       </div>
+      <ToastContainer />
     </div>
   );
 }
