@@ -35,6 +35,13 @@ export default function Modal({ isOpen, onClose, onSubmit, item }: ModalProps) {
     }
   }, [item]);
 
+  const onClean = (): void => {
+    setFormData({
+      title: "",
+      subtitle: "",
+    });
+  };
+
   const validateForm = (): boolean => {
     const newErrors = {
       title: "",
@@ -57,6 +64,7 @@ export default function Modal({ isOpen, onClose, onSubmit, item }: ModalProps) {
     e.preventDefault();
     if (validateForm()) {
       onSubmit(formData);
+      onClean();
       onClose();
     }
   };
