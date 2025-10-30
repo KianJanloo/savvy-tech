@@ -14,7 +14,7 @@ export default function ListItem({ item, onEdit, onDelete }: ListItemProps) {
   const [selectedTitle, setSelectedTitle] = useState<string>("");
 
   return (
-    <div className="flex items-center justify-between p-4 bg-white rounded-lg shadow mb-4">
+    <div className="flex items-center justify-between p-4 bg-white rounded-lg shadow mb-4 hover:scale-[1.02] transition-all duration-300">
       <div className="flex-1">
         <h3 className="text-lg font-semibold text-gray-900">{item.title}</h3>
         <p className="text-sm text-gray-600">{item.subtitle}</p>
@@ -37,8 +37,8 @@ export default function ListItem({ item, onEdit, onDelete }: ListItemProps) {
         </button>
         <button
           onClick={() => {
-            setOpen(true)
-            setSelectedTitle(item.title)
+            setOpen(true);
+            setSelectedTitle(item.title);
           }}
           className="p-1 text-gray-500 hover:text-red-600 hover:bg-gray-100 rounded"
         >

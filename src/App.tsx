@@ -9,7 +9,14 @@ import { PlusIcon } from "@heroicons/react/24/outline";
 import Footer from "./components/Footer";
 
 export default function App() {
-  const [items, setItems] = useState<ListItemType[]>([]);
+  const [items, setItems] = useState<ListItemType[]>([
+    {
+      title: "Product",
+      subtitle: "The subtitle of this product.",
+      dateCreated: new Date(),
+      id: "1",
+    },
+  ]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState<ListItemType | undefined>();
 
@@ -52,7 +59,7 @@ export default function App() {
     <div className="min-h-screen bg-gray-100 py-8">
       <div className="flex flex-col h-[620px] justify-between max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="">
-          <div className="flex flex-wrap gap-4 justify-between items-center mb-6">
+          <div className="flex flex-wrap gap-4 border-b pb-6 border-gray-300 justify-between items-center mb-6">
             <h1 className="text-2xl font-semibold text-gray-900">
               List Management
             </h1>
