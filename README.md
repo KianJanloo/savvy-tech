@@ -46,9 +46,9 @@ savvy-tech/
 │   │   │   └── ToggleTheme.tsx
 │   │   ├── dialogs/
 │   │   │   ├── DeleteModal.tsx
-│   │   ├── loaders/
-│   │   │   ├── LoadingScreen.tsx
 │   │   │   └── Modal.tsx
+│   │   ├── loaders/
+│   │   │   └── LoadingScreen.tsx
 │   │   └── ListItem.tsx
 │   ├── service/
 │   │   └── items.ts
