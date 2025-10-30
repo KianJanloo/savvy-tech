@@ -1,5 +1,7 @@
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
 import type { ListItem as ListItemType } from "../types/ListItem";
+import DeleteModal from "./DeleteModal";
+import { useState } from "react";
 
 interface ListItemProps {
   item: ListItemType;
@@ -8,6 +10,9 @@ interface ListItemProps {
 }
 
 export default function ListItem({ item, onEdit, onDelete }: ListItemProps) {
+  const [isOpen, setOpen] = useState<boolean>(false);
+  const [selectedTitle, setSelectedTitle] = useState<string>("");
+
   return (
     <div className="flex items-center justify-between p-4 bg-white rounded-lg shadow mb-4">
       <div className="flex-1">
@@ -31,12 +36,22 @@ export default function ListItem({ item, onEdit, onDelete }: ListItemProps) {
           <PencilIcon className="h-5 w-5" />
         </button>
         <button
-          onClick={() => onDelete(item.id)}
+          onClick={() => {
+            setOpen(true)
+            setSelectedTitle(item.title)
+          }}
           className="p-1 text-gray-500 hover:text-red-600 hover:bg-gray-100 rounded"
         >
           <TrashIcon className="h-5 w-5" />
         </button>
       </div>
+
+      <DeleteModal
+        isOpen={isOpen}
+        onClose={() => setOpen(false)}
+        onSubmit={() => onDelete(item.id)}
+        title={selectedTitle}
+      />
     </div>
   );
 }
